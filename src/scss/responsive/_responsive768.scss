@@ -15,9 +15,19 @@
       margin-top: 30px;
     }
   }
-  .countries-list {
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 250px);
+  .countries {
+    &-list {
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, 250px);
+    }
+    &-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &-btn {
+      margin: 10px 20px;
+    }
   }
   .country-borders {
     flex-wrap: wrap;

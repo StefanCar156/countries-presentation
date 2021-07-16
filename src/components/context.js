@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
   const [searchFilteredCountries, setSearchFilteredCountries] = useState([])
   const [regionFilteredCountries, setRegionFilteredCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState(countriesData)
+  const [cardsAmountMultiplier, setCardsAmountMultiplier] = useState()
 
   const url = "https://restcountries.eu/rest/v2/all"
 
@@ -135,6 +136,8 @@ const AppProvider = ({ children }) => {
         isLightMode,
         setIsLightMode,
         handleClick,
+        cardsAmountMultiplier,
+        setCardsAmountMultiplier,
       }}
     >
       {children}
