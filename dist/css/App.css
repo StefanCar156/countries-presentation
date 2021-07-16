@@ -1,0 +1,1389 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: auto;
+}
+
+.App {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.App.light {
+  background-color: #fafafa;
+}
+
+.App.light header {
+  background-color: #fff;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .nav {
+  height: 100%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App.light .nav-heading {
+  color: #202c37;
+}
+
+.App.light .nav-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: capitalize;
+  background: transparent;
+  border: none;
+  color: #202c37;
+}
+
+.App.light .nav-btn svg {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.App.light .options {
+  width: 90%;
+  margin: 45px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #202c37;
+}
+
+.App.light .options:focus-within label {
+  background-color: #e6e6e6;
+}
+
+.App.light .options-label {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 20px;
+  width: 500px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .options svg {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.App.light .options-input {
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+  color: #202c37;
+}
+
+.App.light .options-input::-webkit-input-placeholder {
+  color: #202c37;
+  opacity: 0.5;
+}
+
+.App.light .options-input:-ms-input-placeholder {
+  color: #202c37;
+  opacity: 0.5;
+}
+
+.App.light .options-input::-ms-input-placeholder {
+  color: #202c37;
+  opacity: 0.5;
+}
+
+.App.light .options-input::placeholder {
+  color: #202c37;
+  opacity: 0.5;
+}
+
+.App.light .options .dropdown {
+  position: relative;
+  width: 200px;
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.App.light .options .dropdown-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.App.light .options .dropdown-select svg {
+  margin-right: 0;
+}
+
+.App.light .options .dropdown-list {
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  visibility: hidden;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  z-index: -1;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .options .dropdown-list-open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.App.light .options .dropdown-option {
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.App.light .options .dropdown-option:hover {
+  background-color: #fafafa;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.App.light .options .dropdown-option-active {
+  background-color: #fafafa;
+  position: relative;
+}
+
+.App.light .options .dropdown-option-active:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.App.light .options .dropdown-option-active:hover::after {
+  content: "\2715";
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.App.light .countries-list {
+  width: 90%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  gap: 75px;
+}
+
+.App.light .countries-list .no-countries-notification {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #202c37;
+  font-style: italic;
+}
+
+.App.light .card {
+  max-width: 265px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .card-img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.App.light .card-info {
+  padding: 15px;
+  color: #202c37;
+}
+
+.App.light .card-name {
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.App.light .card-details {
+  margin: 10px 0 20px;
+}
+
+.App.light .card-details-item {
+  margin-bottom: 5px;
+}
+
+.App.light .card-details-item span {
+  font-weight: 600;
+}
+
+.App.light .country {
+  width: 90%;
+  margin: 80px auto;
+}
+
+.App.light .country-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 135px;
+  height: 40px;
+  color: #202c37;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .country-btn svg {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.App.light .country-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #202c37;
+  margin-top: 80px;
+}
+
+.App.light .country-img {
+  width: 40vw;
+  max-width: 555px;
+}
+
+.App.light .country-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 145px;
+}
+
+.App.light .country-details {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App.light .country-details-list:last-of-type {
+  margin-left: 115px;
+}
+
+.App.light .country-details-item {
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.App.light .country-details-item span {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.App.light .country-borders {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App.light .country-borders-heading {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.App.light .country-borders-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.App.light .country-borders-item {
+  text-transform: capitalize;
+  margin: 5px;
+  padding: 8px 20px;
+  background-color: #fff;
+  color: #202c37;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.light .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App.light .loading .lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.App.light .loading .lds-roller div {
+  -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  -webkit-transform-origin: 40px 40px;
+          transform-origin: 40px 40px;
+}
+
+.App.light .loading .lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+
+.App.light .loading .lds-roller div:nth-child(1) {
+  -webkit-animation-delay: -0.036s;
+          animation-delay: -0.036s;
+}
+
+.App.light .loading .lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.App.light .loading .lds-roller div:nth-child(2) {
+  -webkit-animation-delay: -0.072s;
+          animation-delay: -0.072s;
+}
+
+.App.light .loading .lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.App.light .loading .lds-roller div:nth-child(3) {
+  -webkit-animation-delay: -0.108s;
+          animation-delay: -0.108s;
+}
+
+.App.light .loading .lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.App.light .loading .lds-roller div:nth-child(4) {
+  -webkit-animation-delay: -0.144s;
+          animation-delay: -0.144s;
+}
+
+.App.light .loading .lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.App.light .loading .lds-roller div:nth-child(5) {
+  -webkit-animation-delay: -0.18s;
+          animation-delay: -0.18s;
+}
+
+.App.light .loading .lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.App.light .loading .lds-roller div:nth-child(6) {
+  -webkit-animation-delay: -0.216s;
+          animation-delay: -0.216s;
+}
+
+.App.light .loading .lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.App.light .loading .lds-roller div:nth-child(7) {
+  -webkit-animation-delay: -0.252s;
+          animation-delay: -0.252s;
+}
+
+.App.light .loading .lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.App.light .loading .lds-roller div:nth-child(8) {
+  -webkit-animation-delay: -0.288s;
+          animation-delay: -0.288s;
+}
+
+.App.light .loading .lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@-webkit-keyframes lds-roller {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-roller {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .App.light .countries-list {
+    gap: 30px;
+  }
+  .App.light .country-info {
+    margin-left: 40px;
+  }
+  .App.light .country-details-list:last-of-type {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App.light .options-label {
+    width: 400px;
+  }
+  .App.light .countries-list {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .App.light .country-main {
+    margin-top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App.light .country-img {
+    width: 100%;
+    max-width: 450px;
+  }
+  .App.light .country-info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App.light .nav-heading {
+    font-size: 20px;
+  }
+  .App.light .options {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .App.light .options-label {
+    width: 100%;
+  }
+  .App.light .options .dropdown {
+    margin-top: 30px;
+  }
+  .App.light .countries-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: (250px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 250px);
+  }
+  .App.light .country-borders {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .App.light .country-borders-list {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .App.light .country-borders-item {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .App.light header {
+    padding: 30px 0;
+  }
+  .App.light .nav-heading {
+    font-size: 14px;
+  }
+  .App.light .options .dropdown-select {
+    font-size: 14px;
+  }
+  .App.light .options .dropdown-option {
+    font-size: 14px;
+  }
+  .App.light .countries-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App.light .country {
+    margin: 40px auto;
+  }
+  .App.light .country-btn {
+    width: 110px;
+  }
+  .App.light .country-main {
+    margin-top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App.light .country-img {
+    width: 100%;
+  }
+  .App.light .country-info {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .App.light .country-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 30px;
+  }
+  .App.light .country-details-list:last-of-type {
+    margin: 30px 0 0;
+  }
+  .App.light .country-borders {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-top: 40px;
+  }
+  .App.light .country-borders-list {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .App.light .country-borders-item:first-of-type {
+    margin-left: 0;
+  }
+}
+
+.App.dark {
+  background-color: #202c37;
+}
+
+.App.dark header {
+  background-color: #2b3945;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .nav {
+  height: 100%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App.dark .nav-heading {
+  color: white;
+}
+
+.App.dark .nav-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: capitalize;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.App.dark .nav-btn svg {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.App.dark .options {
+  width: 90%;
+  margin: 45px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.App.dark .options:focus-within label {
+  background-color: #181f26;
+}
+
+.App.dark .options-label {
+  background-color: #2b3945;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 20px;
+  width: 500px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .options svg {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.App.dark .options-input {
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.App.dark .options-input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.App.dark .options-input:-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.App.dark .options-input::-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.App.dark .options-input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.App.dark .options .dropdown {
+  position: relative;
+  width: 200px;
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.App.dark .options .dropdown-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 20px;
+  background-color: #2b3945;
+  border-radius: 5px;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.App.dark .options .dropdown-select svg {
+  margin-right: 0;
+}
+
+.App.dark .options .dropdown-list {
+  background-color: #2b3945;
+  margin-top: 10px;
+  padding: 10px 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  visibility: hidden;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  z-index: -1;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .options .dropdown-list-open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.App.dark .options .dropdown-option {
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.App.dark .options .dropdown-option:hover {
+  background-color: #202c37;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.App.dark .options .dropdown-option-active {
+  background-color: #202c37;
+  position: relative;
+}
+
+.App.dark .options .dropdown-option-active:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.App.dark .options .dropdown-option-active:hover::after {
+  content: "\2715";
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.App.dark .countries-list {
+  width: 90%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  gap: 75px;
+}
+
+.App.dark .countries-list .no-countries-notification {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  font-style: italic;
+}
+
+.App.dark .card {
+  max-width: 265px;
+  border-radius: 5px;
+  background-color: #2b3945;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .card-img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.App.dark .card-info {
+  padding: 15px;
+  color: white;
+}
+
+.App.dark .card-name {
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.App.dark .card-details {
+  margin: 10px 0 20px;
+}
+
+.App.dark .card-details-item {
+  margin-bottom: 5px;
+}
+
+.App.dark .card-details-item span {
+  font-weight: 600;
+}
+
+.App.dark .country {
+  width: 90%;
+  margin: 80px auto;
+}
+
+.App.dark .country-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 135px;
+  height: 40px;
+  color: white;
+  background-color: #2b3945;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .country-btn svg {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.App.dark .country-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+  margin-top: 80px;
+}
+
+.App.dark .country-img {
+  width: 40vw;
+  max-width: 555px;
+}
+
+.App.dark .country-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 145px;
+}
+
+.App.dark .country-details {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App.dark .country-details-list:last-of-type {
+  margin-left: 115px;
+}
+
+.App.dark .country-details-item {
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.App.dark .country-details-item span {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.App.dark .country-borders {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App.dark .country-borders-heading {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.App.dark .country-borders-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.App.dark .country-borders-item {
+  text-transform: capitalize;
+  margin: 5px;
+  padding: 8px 20px;
+  background-color: #2b3945;
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App.dark .loading .lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.App.dark .loading .lds-roller div {
+  -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  -webkit-transform-origin: 40px 40px;
+          transform-origin: 40px 40px;
+}
+
+.App.dark .loading .lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(1) {
+  -webkit-animation-delay: -0.036s;
+          animation-delay: -0.036s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(2) {
+  -webkit-animation-delay: -0.072s;
+          animation-delay: -0.072s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(3) {
+  -webkit-animation-delay: -0.108s;
+          animation-delay: -0.108s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(4) {
+  -webkit-animation-delay: -0.144s;
+          animation-delay: -0.144s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(5) {
+  -webkit-animation-delay: -0.18s;
+          animation-delay: -0.18s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(6) {
+  -webkit-animation-delay: -0.216s;
+          animation-delay: -0.216s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(7) {
+  -webkit-animation-delay: -0.252s;
+          animation-delay: -0.252s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.App.dark .loading .lds-roller div:nth-child(8) {
+  -webkit-animation-delay: -0.288s;
+          animation-delay: -0.288s;
+}
+
+.App.dark .loading .lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .App.dark .countries-list {
+    gap: 30px;
+  }
+  .App.dark .country-info {
+    margin-left: 40px;
+  }
+  .App.dark .country-details-list:last-of-type {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App.dark .options-label {
+    width: 400px;
+  }
+  .App.dark .countries-list {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .App.dark .country-main {
+    margin-top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App.dark .country-img {
+    width: 100%;
+    max-width: 450px;
+  }
+  .App.dark .country-info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App.dark .nav-heading {
+    font-size: 20px;
+  }
+  .App.dark .options {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .App.dark .options-label {
+    width: 100%;
+  }
+  .App.dark .options .dropdown {
+    margin-top: 30px;
+  }
+  .App.dark .countries-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: (250px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 250px);
+  }
+  .App.dark .country-borders {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .App.dark .country-borders-list {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .App.dark .country-borders-item {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .App.dark header {
+    padding: 30px 0;
+  }
+  .App.dark .nav-heading {
+    font-size: 14px;
+  }
+  .App.dark .options .dropdown-select {
+    font-size: 14px;
+  }
+  .App.dark .options .dropdown-option {
+    font-size: 14px;
+  }
+  .App.dark .countries-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App.dark .country {
+    margin: 40px auto;
+  }
+  .App.dark .country-btn {
+    width: 110px;
+  }
+  .App.dark .country-main {
+    margin-top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App.dark .country-img {
+    width: 100%;
+  }
+  .App.dark .country-info {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .App.dark .country-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 30px;
+  }
+  .App.dark .country-details-list:last-of-type {
+    margin: 30px 0 0;
+  }
+  .App.dark .country-borders {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-top: 40px;
+  }
+  .App.dark .country-borders-list {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .App.dark .country-borders-item:first-of-type {
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=App.css.map */

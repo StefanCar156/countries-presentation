@@ -1,0 +1,19 @@
+// Variables
+$darkBlue: hsl(207, 26%, 17%);
+$lightBlue: hsl(209, 23%, 22%);
+$white: #fff;
+
+// $darkBlue: #fafafa;
+// $lightBlue: #fff;
+// $white: hsl(207, 26%, 17%);
+
+// Maps
+$font-weights: (
+  "thin": 300,
+  "semi-bold": 600,
+  "bold": 800,
+);
+// Functions
+@function weight($weight-key) {
+  @return map-get($font-weights, $weight-key);
+}

@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./scss/App.scss"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Options from "./components/Options"
+import CountriesList from "./components/CountriesList"
+import Country from "./components/Country"
+import { useGlobalContext } from "./components/context"
 
 function App() {
+  const { isLightMode, handleClick } = useGlobalContext()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div
+        className={`App ${isLightMode ? `light` : `dark`}`}
+        onClick={(e) => handleClick(e)}
+      >
+        <Navbar />
+        <Route path="/" exact component={Options} />
+        <Switch>
+          <Route path="/" exact component={CountriesList} />
+          <Route path="/country/:countryName" exact component={Country} />
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App

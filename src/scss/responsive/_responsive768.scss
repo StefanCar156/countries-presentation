@@ -1,0 +1,34 @@
+@media screen and (max-width: 768px) {
+  .nav {
+    &-heading {
+      font-size: 20px;
+    }
+  }
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-label {
+      width: 100%;
+    }
+    .dropdown {
+      margin-top: 30px;
+    }
+  }
+  .countries-list {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 250px);
+  }
+  .country-borders {
+    flex-wrap: wrap;
+
+    &-list {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+    &-item {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+}

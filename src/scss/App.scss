@@ -1,0 +1,27 @@
+@import "./resets";
+@import "./variables";
+
+.App {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 50px;
+
+  &.light {
+    $primaryColor: #fafafa;
+    $secondaryColor: #fff;
+    $textColor: hsl(207, 26%, 17%);
+    background-color: $primaryColor;
+
+    @import "./template";
+  }
+  &.dark {
+    $primaryColor: hsl(207, 26%, 17%);
+    $secondaryColor: hsl(209, 23%, 22%);
+    $textColor: hsl(0, 0%, 100%);
+    background-color: $primaryColor;
+
+    @import "./template";
+  }
+}
