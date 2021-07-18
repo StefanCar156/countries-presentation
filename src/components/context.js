@@ -49,7 +49,7 @@ const AppProvider = ({ children }) => {
       const response = await fetch(valueUrl)
         .then((res) => res.json())
         .then((resData) => {
-          if (resData.status == 404) {
+          if (resData.status === 404) {
             valueArray = []
           } else {
             valueArray = resData

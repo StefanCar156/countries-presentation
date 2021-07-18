@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useGlobalContext } from "./context"
 import { BsArrowLeft } from "react-icons/bs"
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useHistory } from "react-router-dom"
 import Loading from "./Loading"
 
 const Country = () => {
@@ -16,12 +16,22 @@ const Country = () => {
     urlTitle = countryName
   }
 
+  const history = useHistory()
+
   const fetchCountry = async () => {
-    const req = await fetch(
-      `https://restcountries.eu/rest/v2/name/${urlTitle}?fullText=true`
-    )
-    const res = await req.json()
-    setSelectedCountry(res[0])
+    try {
+      const req = await fetch(
+        `https://restcountries.eu/rest/v2/name/${urlTitle}?fullText=true`
+      )
+      const res = await req.json()
+      if (res.status === 404) {
+        history.push("/404")
+      } else {
+        setSelectedCountry(res[0])
+      }
+    } catch (error) {
+      alert("An error occured. Please try later.")
+    }
   }
 
   useEffect(() => {

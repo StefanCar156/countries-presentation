@@ -42,3 +42,12 @@
     }
   }
 }
+.not-found {
+  padding: 50px 10px;
+  &-paragraph {
+    text-align: center;
+  }
+  &-btn {
+    margin-top: 50px;
+  }
+}

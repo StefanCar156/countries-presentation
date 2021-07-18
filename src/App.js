@@ -5,6 +5,7 @@ import Options from "./components/Options"
 import CountriesList from "./components/CountriesList"
 import Country from "./components/Country"
 import { useGlobalContext } from "./components/context"
+import NotFoundPage from "./components/NotFoundPage"
 
 function App() {
   const { isLightMode, handleClick } = useGlobalContext()
@@ -19,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={CountriesList} />
           <Route path="/country/:countryName" exact component={Country} />
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     </Router>
