@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
 
   const url = "https://restcountries.eu/rest/v2/all"
 
+  // Fetch countries data
   const fetchCountries = async () => {
     try {
       setIsLoading(true)
@@ -28,10 +29,12 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  // Set countriesData default value for filteredCountries
   useEffect(() => {
     setFilteredCountries(countriesData)
   }, [countriesData])
 
+  // Search countries based on search input and selected region
   const handleSearchCountries = async () => {
     let value = searchInputValue
     let region = selectedRegion
@@ -75,11 +78,11 @@ const AppProvider = ({ children }) => {
       console.log(error)
     }
 
-    // ARRAY INTERSECTION //
     setSearchFilteredCountries(valueArray)
     setRegionFilteredCountries(regionArray)
   }
 
+  // Set filteredCountries to be intersection between 2 arrays
   useEffect(() => {
     let intersection = []
     if (
@@ -97,14 +100,17 @@ const AppProvider = ({ children }) => {
     setFilteredCountries(intersection)
   }, [searchFilteredCountries, regionFilteredCountries])
 
+  // Trigger search function on input/region changes
   useEffect(() => {
     handleSearchCountries()
   }, [searchInputValue, selectedRegion])
 
+  // When user selects region, close region dropdown
   useEffect(() => {
     setIsDropdownOpen(false)
   }, [selectedRegion])
 
+  // When user clicks outside of dropdown, close it
   const handleClick = (e) => {
     let target = e.target
     if (

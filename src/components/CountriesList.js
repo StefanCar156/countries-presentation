@@ -19,6 +19,7 @@ const CountriesList = () => {
     opacity: "0.3",
   }
 
+  // Check whether or not there is more countries to show
   useEffect(() => {
     if (filteredCountries.length < cardsAmountMultiplier * 8) {
       setIsMoreCardsAvailable(false)
@@ -27,6 +28,7 @@ const CountriesList = () => {
     }
   }, [cardsAmountMultiplier, filteredCountries])
 
+  // On component load, set default values
   useEffect(() => {
     setCardsAmountMultiplier(1)
     fetchCountries()

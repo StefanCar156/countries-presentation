@@ -16,10 +16,6 @@
     }
   }
   .countries {
-    &-list {
-      justify-content: center;
-      grid-template-columns: repeat(auto-fit, 250px);
-    }
     &-btns {
       display: flex;
       flex-wrap: wrap;
@@ -28,6 +24,9 @@
     &-btn {
       margin: 10px 20px;
     }
+  }
+  .card {
+    width: 265px;
   }
   .country-borders {
     flex-wrap: wrap;
@@ -49,5 +48,12 @@
   }
   &-btn {
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 589px) {
+  .card {
+    width: 340px;
+    max-width: none;
   }
 }

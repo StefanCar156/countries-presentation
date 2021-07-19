@@ -45,10 +45,11 @@
   }
   .countries-list {
     justify-content: center;
+    gap: 40px;
   }
   .card {
-    width: 280px;
-    margin-left: -7px;
+    width: 100%;
+    max-width: 265px;
   }
   .country {
     margin: 40px auto;

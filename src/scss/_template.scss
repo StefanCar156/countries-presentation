@@ -168,6 +168,10 @@ header {
     grid-template-columns: repeat(4, 1fr);
     justify-content: stretch;
     gap: 75px;
+
+    a {
+      width: fit-content;
+    }
   }
   &-btns {
     margin-top: 50px;
@@ -459,4 +463,5 @@ header {
 @import "./responsive/responsive1200";
 @import "./responsive/responsive1024";
 @import "./responsive/responsive768";
+@import "./responsive/responsive480";
 @import "./responsive/responsive375";

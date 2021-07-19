@@ -20,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={CountriesList} />
           <Route path="/country/:countryName" exact component={Country} />
+          <Route path="/404" component={NotFoundPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
